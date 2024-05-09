@@ -412,7 +412,7 @@ class SwanSpider(scrapy.Spider):
                     lodged_date = temp_dict['Lodgement date']
                     time_array = time.strptime(lodged_date, '%d/%m/%Y')
                     temp_data = int(time.mktime(time_array))
-                    item['lodged'] = datetime.strptime(lodged_date, '%d/%m/%Y') if lodged_date else 0  
+                    item['lodged'] = temp_data if lodged_date else 0  
             except:
                 item['lodged'] = 0
         except :
